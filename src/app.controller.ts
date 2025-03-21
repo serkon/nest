@@ -1,5 +1,6 @@
-import { Controller, Get } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { AppService } from './app.service';
+import { WebhookService } from './webhook/webhook.service';
 
 @Controller()
 export class AppController {
@@ -10,8 +11,9 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('webhook')
-  getHelloGet(): string {
-    return 'Webhook is listening for POST requests.';
+  @Post()
+  handleWebhookPost(@Body() payload: any) {
+    this.appService.handleWebhook(payload);
+    return 'OK';
   }
 }
