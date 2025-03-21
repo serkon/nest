@@ -5,15 +5,14 @@ import { WebhookService } from './webhook.service';
 export class WebhookController {
   constructor(private readonly webhookService: WebhookService) {}
 
-  // test
   @Post()
-  handleWebhook(@Body() payload: any) {
+  handleWebhookPost(@Body() payload: any) {
     this.webhookService.handleWebhook(payload);
     return 'OK';
   }
 
   @Get()
   handleWebhookGet() {
-    return 'OK';
+    return 'Webhook is listening for POST requests.';
   }
 }
