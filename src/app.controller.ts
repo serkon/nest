@@ -9,4 +9,9 @@ export class AppController {
   getHello(): string {
     return this.appService.getHello();
   }
+
+  @Get('webhook')
+  getHelloGet(): string {
+    return 'Webhook is listening for POST requests.';
+  }
 }
