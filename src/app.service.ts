@@ -22,7 +22,7 @@ export class AppService {
         },
       );
     } else {
-      console.log('Ignoring push to non-master/main branch.');
+      console.log('Ignoring push to non-master/main branch. 1');
     }
   }
 }
