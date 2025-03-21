@@ -11,7 +11,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
+  @Post('webhook')
   handleWebhookPost(@Body() payload: any) {
     this.appService.handleWebhook(payload);
     return 'OK';
