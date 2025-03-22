@@ -1,0 +1,31 @@
+{
+  "recommendations": [
+    // Must
+    "stylelint.vscode-stylelint",
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "Vue.volar",
+    "dbaeumer.vscode-eslint",
+    "SonarSource.sonarlint-vscode",
+
+    // Nice to Have
+    "usernamehw.errorlens",
+    "mhutchie.git-graph",
+    "mhutchie.git-graph",
+
+    // Liked extensions
+    "wayou.vscode-todo-highlight",
+    "christian-kohler.path-intellisense",
+    "christian-kohler.npm-intellisense",
+    "wix.vscode-import-cost",
+    "anteprimorac.html-end-tag-labels",
+    "SimonSiefke.html-language-features",
+    "waderyan.gitblame",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-close-tag",
+    "steoates.autoimport",
+    "formulahendry.auto-rename-tag",
+    "aaron-bond.better-comments",
+    "pranaygp.vscode-css-peek"
+  ]
+}
