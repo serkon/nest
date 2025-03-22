@@ -6,7 +6,7 @@ export class WebhookController {
   constructor(private readonly webhookService: WebhookService) {}
 
   @Post()
-  handleWebhookPost(@Body() payload: any) {
+  handleWebhookPost(@Body() payload: GitHubPushWebhook) {
     this.webhookService.handleWebhook(payload);
     return 'OK';
   }
