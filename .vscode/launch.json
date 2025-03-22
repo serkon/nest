@@ -1,0 +1,55 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug: Node",
+      "port": 9229,
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "start:dev"
+      ],
+      "timeout": 30000,
+      "console": "integratedTerminal",
+      "restart": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Test: Vitest",
+      "autoAttachChildProcesses": true,
+      "skipFiles": [
+        "<node_internals>/**",
+        "**/node_modules/**"
+      ],
+      "program": "${workspaceRoot}/node_modules/vitest/vitest.mjs",
+      "args": [
+        "run",
+        "${relativeFile}"
+      ],
+      "smartStep": true,
+      "console": "integratedTerminal",
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch NPM Test",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "test"
+      ],
+      "port": 9229,
+      "skipFiles": [
+        "<node_internals>/**"
+      ],
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/modules/@timus-networks/icons" // Bu kısmı gerektiği şekilde değiştirin
+    }
+  ]
+}
