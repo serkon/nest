@@ -1,12 +1,18 @@
-import { Controller, Get } from '@nestjs/common';
-import { AppService } from '../app.service';
+import { Body, Controller, Get, Post } from '@nestjs/common';
+import { WebhookService } from './webhook.service';
 
 @Controller('webhook')
 export class WebhookController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly webhookService: WebhookService) {}
+
+  @Post()
+  handleWebhookPost(@Body() payload: any) {
+    this.webhookService.handleWebhook(payload);
+    return 'OK';
+  }
 
   @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  handleWebhookGet() {
+    return 'Webhook is listening for POST requests.';
   }
 }
