@@ -1,0 +1,37 @@
+{
+  "git.autofetch": true,
+  "workbench.list.smoothScrolling": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "stylelint.snippet": [
+    "css",
+    "less",
+    "postcss",
+    "scss"
+  ],
+  "stylelint.validate": [
+    "css",
+    "less",
+    "postcss",
+    "scss",
+    "vue"
+  ],
+  "stylelint.enable": true,
+  "files.autoSave": "onFocusChange",
+  "files.defaultLanguage": "typescript",
+  "files.autoSaveDelay": 1000,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true
+  },
+  "explorer.compactFolders": false,
+  "git-graph.commitDetailsView.fileView.fileTree.compactFolders": false,
+  "typescript.format.insertSpaceBeforeFunctionParenthesis": true,
+  "typescript.format.insertSpaceAfterFunctionKeywordForAnonymousFunctions": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.autoClosingOvertype": "always",
+  "editor.autoIndent": "full",
+}
