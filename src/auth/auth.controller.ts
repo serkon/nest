@@ -13,22 +13,11 @@ export class AuthController {
     return 'Auth Login is listening for POST requests.';
   }
 
-  @Public() // Login endpoint'i public olmalı
+  @Public() // Login endpoint'i public olmalı yoksa JWT guardi devreye girer
   @HttpCode(HttpStatus.OK)
   @UseGuards(AuthGuard('local'))
   @Post('login')
   login(@Request() req: PassportRequest) {
-    // return await new Promise((resolve) => resolve({ user: req.user }));
-
     return this.authService.jwt(req.user);
-  }
-
-  @HttpCode(HttpStatus.OK)
-  // @UseGuards(AuthGuard('jwt'))
-  @Get('profile')
-  getProfile(@Request() req: PassportRequest) {
-    console.log('req', req.user);
-
-    return req.user;
   }
 }

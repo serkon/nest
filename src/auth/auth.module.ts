@@ -1,11 +1,9 @@
 import { Module } from '@nestjs/common';
 import { PassportModule } from '@nestjs/passport';
 
-import { HttpResponseInterceptor } from '@/api.interceptor';
 import { ConfigService } from '@nestjs/config';
-import { APP_INTERCEPTOR } from '@nestjs/core';
 import { JwtModule } from '@nestjs/jwt';
-import { UsersModule } from '../users/users.module';
+import { UserModule } from '../user/user.module';
 import { AuthController } from './auth.controller';
 import { AuthService } from './auth.service';
 import { JwtStrategy } from './jwt.strategy';
@@ -13,7 +11,7 @@ import { LocalStrategy } from './local.strategy';
 
 @Module({
   imports: [
-    UsersModule,
+    UserModule,
     PassportModule.register({ defaultStrategy: 'local' }),
     // JwtModule.register({
     //   global: true,

@@ -8,7 +8,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/jwt.guard';
-import { UsersModule } from './users/users.module';
+import { UserModule } from './user/user.module';
 import { WebhookModule } from './webhook/webhook.module';
 
 @Module({
@@ -19,7 +19,7 @@ import { WebhookModule } from './webhook/webhook.module';
     }),
     MongooseModule.forRoot(process.env.MONGODB_URI ?? ''),
     WebhookModule,
-    UsersModule,
+    UserModule,
     AuthModule,
   ],
   controllers: [AppController],
