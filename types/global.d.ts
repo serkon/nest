@@ -178,6 +178,21 @@ declare global {
       modified: string[];
     };
   }
+
+  interface HttpRequest<T> extends Request {
+    body: T;
+  }
+
+  interface HttpResponse<T> extends Response {
+    result: T;
+    status: number;
+    message: string;
+  }
+
+  interface User {
+    username: string;
+    password: string;
+  }
 }
 
 export {};
