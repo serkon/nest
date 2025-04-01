@@ -1,4 +1,62 @@
+import { Request } from 'express';
+
 declare global {
+  interface HttpRequest<T> extends Request {
+    body: T;
+  }
+
+  interface HttpResponse<T> {
+    result: T | null;
+    status: boolean;
+    timestamp: string;
+    errors?: HttpError[];
+    pagination?: Pagination;
+    sorting?: Sorting[];
+    filters?: Record<string, string>;
+  }
+
+  interface HttpError {
+    code: string; // Hatanın kodu (örneğin, VALIDATION_ERROR, RESOURCE_NOT_FOUND)
+    field?: string;
+    description: string;
+  }
+
+  interface Pagination {
+    page: number;
+    limit: number;
+    total: number;
+    pages: number;
+  }
+
+  interface Sorting {
+    field: string;
+    direction: 'asc' | 'desc';
+  }
+
+  /**
+   * Login
+   */
+
+  interface PassportRequest extends Request {
+    user: User;
+  }
+
+  /**
+   * User
+   */
+  interface User {
+    id: number;
+    username: string;
+    password?: string;
+    name: string;
+    email: string;
+    surname: string;
+  }
+
+  /**
+   * Github
+   */
+
   interface GitHubPushWebhook {
     ref: string;
     before: string;
@@ -177,21 +235,6 @@ declare global {
       removed: string[];
       modified: string[];
     };
-  }
-
-  interface HttpRequest<T> extends Request {
-    body: T;
-  }
-
-  interface HttpResponse<T> extends Response {
-    result: T;
-    status: number;
-    message: string;
-  }
-
-  interface User {
-    username: string;
-    password: string;
   }
 }
 
